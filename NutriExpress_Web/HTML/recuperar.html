@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>NutriExpress - Recuperar Contraseña</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <div class="pantalla-gamma">
+        
+        <div class="tarjeta-form">
+            <div class="badge-logo">🔐 SEGURIDAD</div>
+
+            <div id="seccion-solicitud">
+                <h2>¿OLVIDASTE TU CONTRASEÑA?</h2>
+                <p class="subtitulo">No te preocupes. Ingresa tu correo y te enviaremos un código para restablecerla.</p>
+
+                <form id="formSolicitud">
+                    <div class="grupo-input-gamma">
+                        <label for="reset-correo">Correo Electrónico</label>
+                        <input type="email" id="reset-correo" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    <button type="submit" class="btn-naranja">ENVIAR CÓDIGO</button>
+                    <p class="registro"><a href="index.html">Volver al inicio</a></p>
+                    <p id="error-solicitud" class="mensaje-error"></p>
+                </form>
+            </div>
+
+            <div id="seccion-reset" class="oculto">
+                <h2>NUEVA CONTRASEÑA</h2>
+                <p class="subtitulo">Ingresa el código de 6 dígitos enviado a tu correo y tu nueva clave.</p>
+
+                <form id="formReset">
+                    <div class="grupo-input-gamma">
+                        <label for="reset-codigo">Código de 6 dígitos</label>
+                        <input type="text" id="reset-codigo" class="input-codigo-grande" maxlength="6" required>
+                    </div>
+                    <div class="grupo-input-gamma">
+                        <label for="nueva-pass">Nueva Contraseña</label>
+                        <input type="password" id="nueva-pass" required>
+                    </div>
+                    <button type="submit" class="btn-naranja">ACTUALIZAR CONTRASEÑA</button>
+                    <p id="error-reset" class="mensaje-error"></p>
+                </form>
+            </div>
+        </div>
+
+        <div class="tarjeta-imagen">
+            <div class="imagen-placeholder"></div>
+            <div class="caja-slogan">
+                <h3 class="slogan-amarillo">La seguridad es primero.</h3>
+                <p class="slogan-texto">Protegemos tus datos para que tú solo te preocupes por entrenar.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JSON/recuperar.js"></script>
+</body>
+</html>

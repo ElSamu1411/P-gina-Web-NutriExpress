@@ -1,0 +1,146 @@
+/* ==========================================
+   DISEÑO EXCLUSIVO PARA EL CATÁLOGO
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Fondo oscuro premium */
+    background-color: #373a40; 
+    color: #ffffff;
+}
+
+/* --- BARRA DE NAVEGACIÓN --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-bottom: 1px solid #4d5159;
+}
+
+.nav-izquierda, .nav-derecha {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.badge-logo {
+    background-color: #d35400; /* Naranja NutriExpress */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #d35400;
+    border: 1px solid #d35400;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #d35400;
+    color: white;
+}
+
+/* --- ENCABEZADO --- */
+.header-catalogo {
+    padding: 40px 5%;
+}
+
+.header-catalogo h1 {
+    font-size: 42px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.header-catalogo p {
+    color: #aeb2b8;
+    font-size: 16px;
+}
+
+/* --- CUADRÍCULA DE PRODUCTOS (GRID) --- */
+.grid-productos {
+    display: grid;
+    /* Esto hace la magia: crea columnas automáticas que no midan menos de 260px */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 0 5% 60px;
+}
+
+/* --- EL "CUADRITO" DEL PRODUCTO --- */
+.tarjeta-producto {
+    background-color: #43474e; /* Un gris un poco más claro que el fondo */
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px); /* Se levanta un poco al pasar el mouse */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.imagen-producto {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Cuadrado perfecto */
+    background-color: #2c2e33;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.marca-producto {
+    color: #ff6b35; /* Naranja brillante */
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.nombre-producto {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    flex-grow: 1; /* Empuja el precio y botón hacia abajo */
+}
+
+.precio-producto {
+    color: #ff6b35;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-carrito {
+    background-color: #ff6b35;
+    color: #1a1a1a;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-carrito:hover {
+    background-color: #e05a2b;
+    color: white;
+}

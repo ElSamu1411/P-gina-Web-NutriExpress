@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>NutriExpress - Crear Cuenta</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <div class="pantalla-gamma">
+        
+        <div class="tarjeta-form">
+            <div class="badge-logo">⚡ NUTRIEXPRESS</div>
+
+            <div id="seccion-registro">
+                <h2>CREAR CUENTA</h2>
+                <p class="subtitulo">Únete y lleva tu entrenamiento al siguiente nivel.</p>
+
+                <form id="formRegistro">
+                    <div class="grupo-input-gamma">
+                        <label for="reg-correo">Correo Electrónico</label>
+                        <input type="email" id="reg-correo" required>
+                    </div>
+
+                    <div class="grupo-input-gamma">
+                        <label for="reg-password">Contraseña</label>
+                        <input type="password" id="reg-password" required>
+                    </div>
+
+                    <div class="grupo-input-gamma">
+                        <label for="reg-password-conf">Confirmar Contraseña</label>
+                        <input type="password" id="reg-password-conf" required>
+                    </div>
+
+                    <button type="submit" class="btn-naranja">ENVIAR CÓDIGO</button>
+
+                    <p class="registro">¿Ya tienes cuenta? <a href="index.html">Inicia Sesión</a></p>
+                    <p id="mensajeErrorReg" class="mensaje-error"></p>
+                </form>
+            </div>
+
+            <div id="seccion-verificacion" class="oculto">
+                <h2>VERIFICA TU CORREO</h2>
+                <p class="subtitulo">Hemos enviado un código de 6 dígitos a <br><strong id="correo-enviado-texto"></strong>.</p>
+
+                <form id="formVerificacion">
+                    <div class="grupo-input-gamma">
+                        <label for="reg-codigo">Código de Seguridad</label>
+                        <input type="text" id="reg-codigo" class="input-codigo-grande" maxlength="6" placeholder="000000" required>
+                    </div>
+
+                    <button type="submit" class="btn-naranja">VERIFICAR CUENTA</button>
+                    
+                    <p id="mensajeErrorVer" class="mensaje-error"></p>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="tarjeta-imagen">
+            <div class="imagen-placeholder"></div>
+            
+            <div class="caja-slogan">
+                <h3 class="slogan-amarillo">El primer paso es empezar.</h3>
+                <p class="slogan-texto">Crea tu cuenta y descubre nuestra selección premium para atletas.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../JSON/registro.js"></script>
+</body>
+</html>

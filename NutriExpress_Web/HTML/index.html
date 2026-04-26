@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriExpress - Inicio de Sesión</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <div class="pantalla-gamma">
+        
+        <div class="tarjeta-form">
+            <div class="badge-logo">⚡ NUTRIEXPRESS</div>
+            <h2>INICIAR SESIÓN</h2>
+            <p class="subtitulo">Accede a tu cuenta y continúa tu camino hacia el rendimiento máximo.</p>
+
+            <form id="formLogin">
+                <div class="grupo-input-gamma">
+                    <label for="username">Usuario o Correo</label>
+                    <input type="text" id="username" required>
+                </div>
+
+                <div class="grupo-input-gamma">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <a href="recuperar.html" class="link-naranja">¿Olvidaste tu contraseña?</a>
+
+                <button type="submit" class="btn-naranja">LOGIN</button>
+
+                <p class="registro">¿No tienes cuenta? <a href="registro.html">Regístrate gratis</a></p>
+                <p id="mensajeError" class="mensaje-error"></p>
+            </form>
+        </div>
+
+        <div class="tarjeta-imagen">
+            <div class="imagen-placeholder"></div>
+            
+            <div class="caja-slogan">
+                <h3 class="slogan-amarillo">Tu Energía, Tu Meta.</h3>
+                <p class="slogan-texto">Suplementos premium para atletas que no se detienen.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../JSON/login.js"></script>
+
+</body>
+
+</html>

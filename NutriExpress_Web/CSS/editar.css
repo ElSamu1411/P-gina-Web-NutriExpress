@@ -1,0 +1,55 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body {
+    background-color: #1e2024;
+    color: #e4e6eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.contenedor-edicion {
+    background-color: #242526;
+    border: 1px solid #393a3e;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.encabezado-edicion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #393a3e;
+    padding-bottom: 20px;
+}
+
+.encabezado-edicion h1 { color: #d35400; font-size: 24px; }
+.btn-volver { color: #a8abaf; text-decoration: none; font-weight: bold; transition: 0.2s; }
+.btn-volver:hover { color: white; }
+
+/* Reutilizamos estilos del admin para los inputs */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+.grupo-input label { display: block; font-size: 13px; color: #a8abaf; margin-bottom: 8px; }
+.grupo-input input, .grupo-input select {
+    width: 100%; padding: 12px; background-color: #1e2024;
+    border: 1px solid #393a3e; border-radius: 6px; color: white; outline: none;
+}
+.grupo-input input:focus, .grupo-input select:focus { border-color: #d35400; }
+
+.zona-drop {
+    grid-column: span 2; border: 2px dashed #555; border-radius: 10px;
+    padding: 30px 20px; text-align: center; cursor: pointer; transition: 0.3s;
+}
+.zona-drop:hover { border-color: #d35400; background-color: rgba(211, 84, 0, 0.05); }
+
+.btn-naranja {
+    background-color: #d35400; color: white; border: none; width: 100%;
+    padding: 15px; border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer;
+}
+.btn-naranja:hover { background-color: #e65c00; }

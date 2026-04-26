@@ -1,0 +1,321 @@
+/* =========================================
+   1. RESETEO Y VARIABLES GLOBALES
+========================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   2. ESTILOS DEL LOGIN (Estilo Tarjetas Gamma)
+========================================= */
+body {
+    background-color: #2c2f33; /* Fondo oscuro global tipo Gamma */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.pantalla-gamma {
+    display: flex;
+    gap: 20px;
+    max-width: 1600px; /* ANTES: 900px. Súbelo a 1100px o 1200px */
+    width: 95%;
+    min-height: 850px; /* NUEVO: Agrega esto para obligarlo a ser más alto */
+}
+
+/* --- TARJETA IZQUIERDA (Gris Claro) --- */
+.tarjeta-form {
+    flex: 1;
+    background-color: #daddd8;
+    padding: 60px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.badge-logo {
+    background-color: #fcebd7;
+    color: #d35400; /* Naranja fuerte */
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.tarjeta-form h2 {
+    margin: 0 0 10px 0;
+    font-size: 42px;
+    color: #1a1a1a;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.subtitulo {
+    color: #4a4a4a;
+    font-size: 14px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* El detalle de la línea gruesa naranja a la izquierda */
+.grupo-input-gamma {
+    margin-bottom: 25px;
+    border-left: 4px solid #d35400;
+    padding-left: 15px;
+}
+
+.grupo-input-gamma label {
+    display: block;
+    font-size: 16px;
+    color: #1a1a1a;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.grupo-input-gamma input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #7a7a7a;
+    background-color: transparent;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #1a1a1a;
+    outline: none;
+}
+
+.grupo-input-gamma input:focus {
+    border-bottom: 2px solid #d35400;
+}
+
+.link-naranja {
+    color: #d35400;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.btn-naranja {
+    background-color: #d35400;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+}
+
+.btn-naranja:hover {
+    background-color: #b04400;
+}
+
+.registro {
+    font-size: 13px;
+    color: #7a7a7a;
+}
+
+.registro a {
+    color: #7a7a7a;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* --- TARJETA DERECHA (Oscura) --- */
+.tarjeta-imagen {
+    flex: 1;
+    background-color: #36393e;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Recreé la imagen con una URL de internet para que no se vea vacío */
+.imagen-placeholder {
+    flex: 1;
+    background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    min-height: 250px;
+}
+
+.caja-slogan {
+    border: 1px solid #d35400;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.slogan-amarillo {
+    color: #f1c40f;
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.slogan-texto {
+    color: #e0e0e0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mensaje-error { display: none; color: red; font-size: 14px; }
+
+/* =========================================
+   3. ESTILOS DEL CATÁLOGO (catalogo.html)
+========================================= */
+.navbar {
+    background-color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.nav-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Separación entre el logo y el enlace de volver */
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.link-volver {
+    text-decoration: none;
+    color: #95a5a6;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+.link-volver:hover { color: #e74c3c; } /* Se pone rojo al pasar el mouse */
+
+.btn-carrito {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.titulo-seccion {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+/* =========================================
+   4. DISEÑO DE LA TARJETA DE PRODUCTO
+========================================= */
+.tarjeta-suplemento {
+    background-color: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Sombra sutil */
+    text-align: center;
+    border: 1px solid #ecf0f1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación fluida */
+}
+
+/* Efecto al pasar el mouse por la tarjeta */
+.tarjeta-suplemento:hover {
+    transform: translateY(-5px); /* Se levanta un poco */
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15); /* La sombra se hace más grande */
+}
+
+.tarjeta-suplemento h2 {
+    color: #2c3e50;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    height: 50px; /* Mantiene alineadas las tarjetas aunque el nombre sea largo */
+}
+
+.marca {
+    color: #7f8c8d;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.precio {
+    color: #27ae60;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.btn-agregar {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-agregar:hover {
+    background-color: #1c5982;
+}
+
+/* --- UTILIDADES PARA EL REGISTRO --- */
+
+/* Esta clase hace magia: desaparece lo que la tenga puesta */
+.oculto {
+    display: none !important;
+}
+
+/* Diseño especial para que los 6 dígitos parezcan de una app bancaria */
+.input-codigo-grande {
+    font-size: 32px !important;
+    letter-spacing: 12px; /* Separa los números */
+    text-align: center;
+    font-weight: 900;
+    color: #d35400 !important; /* Naranja */
+}

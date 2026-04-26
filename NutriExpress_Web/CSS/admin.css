@@ -1,0 +1,274 @@
+/* ==========================================
+   DISEÑO DEL PANEL DE ADMINISTRACIÓN
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #1e2024; /* Fondo muy oscuro, estilo dashboard */
+    color: #e4e6eb;
+    display: flex;
+    height: 100vh;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    width: 260px;
+    background-color: #242526;
+    border-right: 1px solid #393a3e;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 25px 20px;
+    font-size: 18px;
+    font-weight: 900;
+    color: #d35400; /* Naranja NutriExpress */
+    letter-spacing: 1px;
+    border-bottom: 1px solid #393a3e;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 15px 25px;
+    color: #a8abaf;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.sidebar-menu li a:hover, .sidebar-menu li a.activo {
+    background-color: rgba(211, 84, 0, 0.1);
+    color: #d35400;
+    border-left: 4px solid #d35400;
+}
+
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid #393a3e;
+}
+
+/* --- ÁREA PRINCIPAL --- */
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 40px;
+}
+
+.encabezado-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.encabezado-admin h1 {
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.btn-naranja {
+    background-color: #d35400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-naranja:hover {
+    background-color: #e65c00;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: #a8abaf;
+    border: 1px solid #a8abaf;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* --- FORMULARIO (GRID) --- */
+.tarjeta-admin {
+    background-color: #242526;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #393a3e;
+}
+
+.tarjeta-admin h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #a8abaf;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.grupo-input label {
+    display: block;
+    font-size: 13px;
+    color: #a8abaf;
+    margin-bottom: 8px;
+}
+
+.grupo-input input, .grupo-input select {
+    width: 100%;
+    padding: 12px;
+    background-color: #1e2024;
+    border: 1px solid #393a3e;
+    border-radius: 6px;
+    color: white;
+    outline: none;
+}
+
+.grupo-input input:focus, .grupo-input select:focus {
+    border-color: #d35400;
+}
+
+/* --- ZONA DRAG & DROP --- */
+.zona-drop {
+    grid-column: span 2; /* Ocupa las dos columnas */
+    border: 2px dashed #555;
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.zona-drop:hover, .zona-drop.arrastrando {
+    border-color: #d35400;
+    background-color: rgba(211, 84, 0, 0.05);
+}
+
+.zona-drop p {
+    color: #a8abaf;
+    margin-top: 10px;
+}
+
+.acciones-form {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+/* --- TABLA --- */
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-admin th {
+    text-align: left;
+    padding: 15px;
+    color: #a8abaf;
+    border-bottom: 2px solid #393a3e;
+    font-size: 14px;
+}
+
+.tabla-admin td {
+    padding: 15px;
+    border-bottom: 1px solid #393a3e;
+    font-size: 14px;
+}
+
+.img-miniatura {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: #1e2024;
+    object-fit: cover;
+}
+
+.badge-activo {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.icono-accion {
+    cursor: pointer;
+    margin-right: 10px;
+    color: #a8abaf;
+}
+
+.icono-accion:hover {
+    color: white;
+}
+
+/* --- VENTANA MODAL --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background-color: #242526;
+    border: 1px solid #393a3e;
+    border-radius: 12px;
+    padding: 30px;
+    width: 450px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.acciones-modal {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-peligro {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-peligro-borde {
+    background-color: transparent;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-peligro:hover { background-color: #c82333; }
+.btn-peligro-borde:hover { background-color: #dc3545; color: white; }
+
+/* Reutilizamos la clase oculto */
+.oculto { display: none !important; }

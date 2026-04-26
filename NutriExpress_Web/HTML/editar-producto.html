@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Producto - NutriExpress</title>
+    <link rel="stylesheet" href="../CSS/editar.css">
+</head>
+<body>
+
+    <div class="contenedor-edicion">
+        <header class="encabezado-edicion">
+            <h1>✏️ Modificar Suplemento</h1>
+            <a href="admin.html" class="btn-volver">← Volver al Catálogo</a>
+        </header>
+
+        <form id="form-editar">
+            <input type="hidden" id="edit-id">
+
+            <div class="form-grid">
+                <div class="grupo-input">
+                    <label>Nombre del Producto</label>
+                    <input type="text" id="edit-nombre" required>
+                </div>
+                <div class="grupo-input">
+                    <label>Marca</label>
+                    <input type="text" id="edit-marca" required>
+                </div>
+                <div class="grupo-input">
+                    <label>Categoría</label>
+                    <select id="edit-categoria" required>
+                        <option value="Proteína">Proteína</option>
+                        <option value="Creatina">Creatina</option>
+                        <option value="Pre-Entreno">Pre-Entreno</option>
+                        <option value="Aminoácidos">Aminoácidos</option>
+                        <option value="Vitaminas">Vitaminas</option>
+                        <option value="Ganador de peso">Ganador de peso</option>
+                        <option value="Quemador">Quemador</option>
+                    </select>
+                </div>
+                <div class="grupo-input">
+                    <label>Precio (MXN)</label>
+                    <input type="number" step="0.01" id="edit-precio" required>
+                </div>
+
+                <div class="zona-drop" id="edit-zona-drop">
+                    <p>Cargando imagen...</p>
+                    <input type="file" id="edit-input-archivo" style="display: none;" accept="image/png, image/jpeg">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-naranja">Guardar Cambios</button>
+        </form>
+    </div>
+
+    <script src="../JSON/editar.js"></script>
+</body>
+</html>

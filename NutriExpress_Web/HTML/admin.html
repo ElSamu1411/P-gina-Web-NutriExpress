@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriExpress - Panel de Administración</title>
+    <link rel="stylesheet" href="../CSS/admin.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            ⚡ NUTRIEXPRESS ADMIN
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#">📊 Dashboard</a></li>
+            <li><a href="#" class="activo">💊 Gestión de Suplementos</a></li>
+            <li><a href="#">🏢 Sucursales e Inventario</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="index.html" style="color: #a8abaf; text-decoration: none;">🚪 Cerrar Sesión</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="encabezado-admin">
+            <h1>Gestión de Suplementos</h1>
+            <button class="btn-naranja">+ Nuevo Suplemento</button>
+        </header>
+
+        <section class="tarjeta-admin" id="seccion-formulario">
+            <h2>Crear Nuevo Producto</h2>
+            
+            <form id="form-producto">
+                <input type="hidden" id="suplemento-id" value="">
+                <div class="form-grid">
+                    <div class="grupo-input">
+                        <label for="nombre">Nombre del Producto</label>
+                        <input type="text" id="nombre" placeholder="Ej: Whey Protein Gold" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="marca">Marca</label>
+                        <input type="text" id="marca" placeholder="Ej: Optimum Nutrition" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="categoria">Categoría</label>
+                        <select id="categoria" required>
+                            <option value="">Selecciona una...</option>
+                            <option value="Proteína">Proteína</option>
+                            <option value="Creatina">Creatina</option>
+                            <option value="Pre-Entreno">Pre-Entreno</option>
+                            <option value="Aminoácidos">Aminoácidos</option>
+                            <option value="Vitaminas">Vitaminas</option>
+                        </select>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="precio">Precio (MXN)</label>
+                        <input type="number" step="0.01" id="precio" placeholder="Ej: 1850.00" required>
+                    </div>
+
+                    <div class="zona-drop" id="zona-drop">
+                        <span style="font-size: 30px;">📸</span>
+                        <p><strong>Arrastra y suelta</strong> la imagen aquí o haz clic para explorar.</p>
+                        <p style="font-size: 12px; color: #777;">Formatos soportados: PNG, JPG.</p>
+                        <input type="file" id="input-archivo" style="display: none;" accept="image/png, image/jpeg">
+                    </div>
+                </div>
+
+                <div class="acciones-form">
+                    <button type="button" class="btn-secundario">Cancelar</button>
+                    <button type="submit" class="btn-naranja">Guardar Producto</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="tarjeta-admin">
+            <h2>Catálogo Actual</h2>
+            <table class="tabla-admin">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Marca</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla">
+                    <tr>
+                        <td>#001</td>
+                        <td><img src="https://placehold.co/40" class="img-miniatura"></td>
+                        <td>Whey Protein Gold Standard</td>
+                        <td>Optimum Nutrition</td>
+                        <td>$1,850.00</td>
+                        <td><span class="badge-activo">ACTIVO</span></td>
+                        <td>
+                            <span class="icono-accion" title="Editar">✏️</span>
+                            <span class="icono-accion" title="Eliminar">🗑️</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#002</td>
+                        <td><img src="https://placehold.co/40" class="img-miniatura"></td>
+                        <td>Creatina Monohidrato 300g</td>
+                        <td>Mutant</td>
+                        <td>$550.00</td>
+                        <td><span class="badge-activo">ACTIVO</span></td>
+                        <td>
+                            <span class="icono-accion" title="Editar">✏️</span>
+                            <span class="icono-accion" title="Eliminar">🗑️</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <div id="modal-eliminar" class="modal-overlay oculto">
+    <div class="modal-box">
+        <h3>¿Eliminar Suplemento?</h3>
+        <p>Estás a punto de eliminar: <strong id="nombre-eliminar-texto"></strong></p>
+        <p style="font-size: 13px; color: #a8abaf; margin-bottom: 20px;">
+            ¿Deseas darlo de baja en todas las sucursales (Global) o solo en el inventario local?
+        </p>
+
+        <div class="acciones-modal">
+            <button class="btn-secundario" onclick="cerrarModal()">Cancelar</button>
+            <button class="btn-peligro-borde" onclick="ejecutarEliminacion('sucursal')">Baja en Sucursal</button>
+            <button class="btn-peligro" onclick="ejecutarEliminacion('global')">Baja Global</button>
+        </div>
+    </div>
+</div>
+
+    <script src="../JSON/admin.js"></script>
+
+</body>
+
+</html>
